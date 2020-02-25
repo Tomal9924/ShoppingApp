@@ -4,29 +4,38 @@ import java.util.ArrayList;
 
 public class HomePageModel {
 
-    private ArrayList<QuickMenu> quickMenus;
-    private ArrayList<QuickMenu> hotOffersModels;
+    private ArrayList<SuperModel> superModels;
+    private ArrayList<SuperModel> hotOffersModels;
+    private ArrayList<SuperModel> trendingProducts;
 
     public HomePageModel() {}
 
-    public HomePageModel(ArrayList<QuickMenu> quickMenus, ArrayList<QuickMenu> hotOffersModels) {
-        this.quickMenus = quickMenus;
+    public HomePageModel(ArrayList<SuperModel> superModels, ArrayList<SuperModel> hotOffersModels) {
+        this.superModels = superModels;
         this.hotOffersModels = hotOffersModels;
     }
 
-    public ArrayList<QuickMenu> getHotOffersModels() {
+    public ArrayList<SuperModel> getTrendingProducts() {
+        return trendingProducts;
+    }
+
+    public void setTrendingProducts(ArrayList<SuperModel> trendingProducts) {
+        this.trendingProducts = trendingProducts;
+    }
+
+    public ArrayList<SuperModel> getHotOffersModels() {
         return hotOffersModels;
     }
 
-    public void setHotOffersModels(ArrayList<QuickMenu> hotOffersModels) {
+    public void setHotOffersModels(ArrayList<SuperModel> hotOffersModels) {
         this.hotOffersModels = hotOffersModels;
     }
 
-    public ArrayList<QuickMenu> getQuickMenus() {
-        return quickMenus;
+    public ArrayList<SuperModel> getSuperModels() {
+        return superModels;
     }
 
-    public void setQuickMenus(ArrayList<QuickMenu> quickMenus) {
-        this.quickMenus = quickMenus;
+    public void setSuperModels(ArrayList<SuperModel> superModels) {
+        this.superModels = superModels;
     }
 }

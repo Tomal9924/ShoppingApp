@@ -17,12 +17,12 @@ import com.smarteist.autoimageslider.SliderViewAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderAdapterVH> {
+public class CategoriesHomepageSliderAdapter extends SliderViewAdapter<CategoriesHomepageSliderAdapter.SliderAdapterVH> {
 
     private Context context;
     private List<SliderModel> mSliderModels = new ArrayList<>();
 
-    public SliderAdapter(Context context) {
+    public CategoriesHomepageSliderAdapter(Context context) {
         this.context = context;
     }
 
@@ -43,7 +43,7 @@ public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderAdapter
 
     @Override
     public SliderAdapterVH onCreateViewHolder(ViewGroup parent) {
-        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.image_slider_layout_item, null);
+        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_layout_categories, null);
         return new SliderAdapterVH(inflate);
     }
 
@@ -51,15 +51,11 @@ public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderAdapter
     public void onBindViewHolder(SliderAdapterVH viewHolder, final int position) {
 
         SliderModel sliderItem = mSliderModels.get(position);
-
         viewHolder.textViewDescription.setText(sliderItem.getDescription());
-        viewHolder.textViewDescription.setTextSize(16);
-        viewHolder.textViewDescription.setTextColor(Color.WHITE);
         Glide.with(viewHolder.itemView)
                 .load(sliderItem.getImageUrl())
                 .fitCenter()
                 .into(viewHolder.imageViewBackground);
-
     }
 
     @Override
@@ -72,14 +68,12 @@ public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderAdapter
 
         View itemView;
         ImageView imageViewBackground;
-        ImageView imageGifContainer;
         TextView textViewDescription;
 
         SliderAdapterVH(View itemView) {
             super(itemView);
-            imageViewBackground = itemView.findViewById(R.id.iv_auto_image_slider);
-            imageGifContainer = itemView.findViewById(R.id.iv_gif_container);
-            textViewDescription = itemView.findViewById(R.id.tv_auto_image_slider);
+            imageViewBackground = itemView.findViewById(R.id.categories_image);
+            textViewDescription = itemView.findViewById(R.id.categories_text);
             this.itemView = itemView;
         }
     }

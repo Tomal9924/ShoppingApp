@@ -1,7 +1,6 @@
 package com.example.shoppingapp.Adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,18 +11,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.shoppingapp.Model.QuickMenu;
+import com.example.shoppingapp.Model.SuperModel;
 import com.example.shoppingapp.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class QuickLinkListForHomepageAdapter extends RecyclerView.Adapter<QuickLinkListForHomepageAdapter.ViewHolder> {
 
     Context mContext;
-    ArrayList<QuickMenu> mArraylist;
+    ArrayList<SuperModel> mArraylist;
 
-    public QuickLinkListForHomepageAdapter(Context mContext, ArrayList<QuickMenu> mArraylist) {
+    public QuickLinkListForHomepageAdapter(Context mContext, ArrayList<SuperModel> mArraylist) {
         this.mContext = mContext;
         this.mArraylist = mArraylist;
     }
@@ -58,12 +56,11 @@ public class QuickLinkListForHomepageAdapter extends RecyclerView.Adapter<QuickL
                 viewHolder.mLogo.setImageResource(mArraylist.get(position).getImage());
                 break;
             case 6:
-                viewHolder.mDivider.setVisibility(View.GONE);
                 viewHolder.mLogo.setImageResource(mArraylist.get(position).getImage());
                 break;
         }
 
-        viewHolder.mLayout.setOnClickListener(new View.OnClickListener() {
+      /*  viewHolder.mLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 switch (position) {
@@ -84,7 +81,7 @@ public class QuickLinkListForHomepageAdapter extends RecyclerView.Adapter<QuickL
                         break;
                 }
             }
-        });
+        });*/
     }
 
         @Override
@@ -96,15 +93,11 @@ public class QuickLinkListForHomepageAdapter extends RecyclerView.Adapter<QuickL
             RelativeLayout mLayout;
             ImageView mLogo;
             TextView mCaption;
-            View mDivider;
 
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
-
                 mCaption = itemView.findViewById(R.id.row_layout_quick_link_caption);
                 mLogo = itemView.findViewById(R.id.row_layout_quick_link_logo);
-                mDivider = itemView.findViewById(R.id.row_layout_quick_link_divider);
-                mLayout = itemView.findViewById(R.id.row_layout_quick_link_layout);
             }
         }
     }

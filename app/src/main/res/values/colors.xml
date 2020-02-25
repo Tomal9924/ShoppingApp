@@ -3,6 +3,7 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#ffffbb33</color>
+    <color name="quickMenuCardColor">#FFAB00</color>
     <color name="colorOffWhite">#59FFFFFF</color>
     <color name="levelColor">#454545</color>
     <color name="dividerColor">#887F7F</color>
