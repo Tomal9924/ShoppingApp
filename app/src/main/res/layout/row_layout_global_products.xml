@@ -13,7 +13,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="200dp"
             android:elevation="5dp"
             app:cardBackgroundColor="@android:color/white"
             app:cardCornerRadius="5dp"
@@ -28,38 +28,26 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="7">
+                    android:layout_weight="5">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:id="@+id/hot_offer_image"
+                            android:id="@+id/global_image"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:scaleType="fitCenter"
                             android:src="@drawable/ic_dashboard" />
 
-                        <TextView
-                            android:id="@+id/row_layout_hot_offer_caption"
-                            style="@style/TextAppearance.AppCompat.Caption"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentLeft="true"
-                            android:layout_alignParentTop="true"
-                            android:layout_gravity="start"
-                            android:background="@drawable/discount_shape"
-                            android:gravity="center"
-                            android:text="80%"
-                            android:textColor="@android:color/white" />
                     </RelativeLayout>
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="3">
+                    android:layout_weight="5">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -76,68 +64,73 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@android:color/white"
-                            android:gravity="center"
+                            android:gravity="start"
+                            android:padding="4dp"
                             android:orientation="vertical">
 
                             <TextView
                                 android:id="@+id/product_title"
-                                style="@style/TextAppearance.AppCompat.Subhead"
+                                style="@style/TextAppearance.AppCompat.Small"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Titan watch"
                                 android:textColor="@android:color/black" />
 
-                            <RatingBar
-                                android:id="@+id/product_ratting"
+                            <RelativeLayout
                                 android:layout_width="wrap_content"
-                                android:layout_height="42dp"
-                                android:numStars="5"
-                                android:rating="5"
-                                android:layout_gravity="center_vertical"
-                                android:max="5"
-                                android:stepSize="0.5"
-                                android:scaleX=".5"
-                                android:scaleY=".5" />
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:paddingTop="8dp">
+
+                                <RatingBar
+                                    android:id="@+id/product_ratting"
+                                    style="@style/RatingBar"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:isIndicator="true"
+                                    android:max="5"
+                                    android:rating="4"
+                                    android:layout_alignParentStart="true" />
+
+                                <TextView
+                                    android:id="@+id/product_review_count"
+                                    style="@style/TextAppearance.AppCompat.Small"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:gravity="center_horizontal"
+                                    android:text="(23)"
+                                    android:textColor="@android:color/darker_gray" />
+                            </RelativeLayout>
 
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="-2dp"
-                                android:orientation="horizontal"
-                                android:paddingLeft="8dp"
-                                android:paddingEnd="8dp"
-                                android:paddingRight="8dp">
+                                android:orientation="horizontal">
 
                                 <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:orientation="horizontal"
-                                    android:layout_alignParentStart="true"
-                                    android:layout_alignParentLeft="true"
+                                    android:gravity="center_horizontal"
                                     android:layout_gravity="center">
                                     <ImageView
                                         android:layout_width="24dp"
                                         android:layout_height="24dp"
                                         android:src="@drawable/ic_taka"/>
                                     <TextView
-                                        android:id="@+id/product_new_price"
-                                        style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+                                        android:id="@+id/global_price"
+                                        style="@style/TextAppearance.AppCompat.Small"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="100 Rs"
+                                        android:paddingTop="4dp"
                                         android:textColor="@android:color/black" />
 
                                 </LinearLayout>
 
-                                <TextView
-                                    android:id="@+id/price_off"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignParentEnd="true"
-                                    android:layout_alignParentRight="true"
-                                    android:gravity="end"
-                                    android:text="60"
-                                    android:textColor="@android:color/darker_gray" />
                             </RelativeLayout>
                         </LinearLayout>
                     </LinearLayout>

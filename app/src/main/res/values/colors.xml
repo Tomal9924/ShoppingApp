@@ -7,5 +7,6 @@
     <color name="colorOffWhite">#59FFFFFF</color>
     <color name="levelColor">#454545</color>
     <color name="dividerColor">#887F7F</color>
+    <color name="navBarColor">#FFF</color>
     <color name="searchBackground">#F0F0F0</color>
 </resources>

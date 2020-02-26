@@ -11,6 +11,12 @@ public class SuperModel {
     double productOffPrice;
 
 
+    public SuperModel(int id, int image, String productTitle, double productNewPrice) {
+        this.id = id;
+        this.image = image;
+        this.productTitle = productTitle;
+        this.productNewPrice = productNewPrice;
+    }
 
     public SuperModel(int id, int image, String productTitle, int ratting, double productNewPrice) {
         this.id = id;

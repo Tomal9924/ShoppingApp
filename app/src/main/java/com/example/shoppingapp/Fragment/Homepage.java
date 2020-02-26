@@ -20,6 +20,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.example.shoppingapp.Adapter.CategoriesHomepageSliderAdapter;
+import com.example.shoppingapp.Adapter.FeaturedBrandsSliderAdapter;
+import com.example.shoppingapp.Adapter.GlobalProductsAdapter;
 import com.example.shoppingapp.Adapter.HotOfferForHomepageAdapter;
 import com.example.shoppingapp.Adapter.QuickLinkListForHomepageAdapter;
 import com.example.shoppingapp.Adapter.SliderAdapter;
@@ -40,15 +42,16 @@ public class Homepage extends Fragment {
 
     View fragmentView;
     SearchView mSearchview;
-    SliderView sliderView;
+    SliderView sliderView,mFeaturedBrandsSliderView;
     private SliderAdapter mSliderAdapter;
-    RecyclerView mQuickList,mHotOfferList,mTrendingList,mCategoriesList;
+    private FeaturedBrandsSliderAdapter mBrandsSliderAdapter;
+    RecyclerView mQuickList,mHotOfferList,mTrendingList,mCategoriesList,mGlobalList;
     HomeFragmentViewModel mViewModel;
     QuickLinkListForHomepageAdapter mQuickLinkAdapter;
     HotOfferForHomepageAdapter mHotOfferForHomepageAdapter;
     TrendingNowHomepageAdapter mTrendingAdapter;
-    SliderView mCategoriesSlider;
     CategoriesHomepageSliderAdapter mCategoriesAdapter;
+    GlobalProductsAdapter mGlobalAdapter;
 
 
     @Override
@@ -78,12 +81,14 @@ public class Homepage extends Fragment {
 
         mSearchview=fragmentView.findViewById(R.id.homepage_searchView);
         sliderView=fragmentView.findViewById(R.id.homepage_offer_slider);
-        mCategoriesSlider=fragmentView.findViewById(R.id.homepage_categories_slider);
+        mFeaturedBrandsSliderView=fragmentView.findViewById(R.id.top_brands_slider);
+        mCategoriesList=fragmentView.findViewById(R.id.categories_list_recyclerView);
         mQuickList=fragmentView.findViewById(R.id.quick_menu_recyclerView);
+        mGlobalList=fragmentView.findViewById(R.id.global_product_list);
         mHotOfferList=fragmentView.findViewById(R.id.hot_offer_recyclerView);
         mTrendingList=fragmentView.findViewById(R.id.trending_now_recyclerView);
 
-        RecyclerView.LayoutManager layoutmanager = new GridLayoutManager(getActivity(), 3);
+        RecyclerView.LayoutManager layoutmanager = new GridLayoutManager(getActivity(), 4);
         mQuickList.setLayoutManager(layoutmanager);
 
 
@@ -93,8 +98,18 @@ public class Homepage extends Fragment {
         mTrendingList.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
         mTrendingList.setNestedScrollingEnabled(true);
 
+        RecyclerView.LayoutManager mCategoriesListLayout = new GridLayoutManager(getActivity(), 3);
+        mCategoriesList.setLayoutManager(mCategoriesListLayout);
 
-        mSearchview.setIconified(true);
+        RecyclerView.LayoutManager mGlobalListLayout = new GridLayoutManager(getActivity(), 2);
+        mGlobalList.setLayoutManager(mGlobalListLayout);
+
+        mSearchview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mSearchview.setIconified(false);
+            }
+        });
         mSearchview.clearFocus();
         EditText txtSearch = ((EditText) mSearchview.findViewById(androidx.appcompat.R.id.search_src_text));
         txtSearch.setHintTextColor(Color.LTGRAY);
@@ -108,7 +123,9 @@ public class Homepage extends Fragment {
         sliderView.setSliderAdapter(mSliderAdapter);
         renewItems(null);
 
-
+        mBrandsSliderAdapter = new FeaturedBrandsSliderAdapter(getContext());
+        mFeaturedBrandsSliderView.setSliderAdapter(mBrandsSliderAdapter);
+        renewItemsForBrandsSlider(null);
 
         sliderView.setIndicatorAnimation(IndicatorAnimations.SLIDE); //set indicator animation by using SliderLayout.IndicatorAnimations. :WORM or THIN_WORM or COLOR or DROP or FILL or NONE or SCALE or SCALE_DOWN or SLIDE and SWAP!!
         sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
@@ -119,19 +136,15 @@ public class Homepage extends Fragment {
         sliderView.setAutoCycle(true);
         sliderView.startAutoCycle();
 
-        mCategoriesAdapter = new CategoriesHomepageSliderAdapter(getContext());
-        mCategoriesSlider.setSliderAdapter(mCategoriesAdapter);
-        renewItemsForCategories(null);
+        mFeaturedBrandsSliderView.setIndicatorAnimation(IndicatorAnimations.SLIDE); //set indicator animation by using SliderLayout.IndicatorAnimations. :WORM or THIN_WORM or COLOR or DROP or FILL or NONE or SCALE or SCALE_DOWN or SLIDE and SWAP!!
+        mFeaturedBrandsSliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
+        mFeaturedBrandsSliderView.setAutoCycleDirection(SliderView.AUTO_CYCLE_DIRECTION_BACK_AND_FORTH);
+        mFeaturedBrandsSliderView.setIndicatorSelectedColor(Color.WHITE);
+        mFeaturedBrandsSliderView.setIndicatorUnselectedColor(Color.GRAY);
+        mFeaturedBrandsSliderView.setScrollTimeInSec(3);
+        mFeaturedBrandsSliderView.setAutoCycle(true);
+        mFeaturedBrandsSliderView.startAutoCycle();
 
-
-        mCategoriesSlider.setIndicatorAnimation(IndicatorAnimations.SLIDE); //set indicator animation by using SliderLayout.IndicatorAnimations. :WORM or THIN_WORM or COLOR or DROP or FILL or NONE or SCALE or SCALE_DOWN or SLIDE and SWAP!!
-        mCategoriesSlider.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
-        mCategoriesSlider.setAutoCycleDirection(SliderView.AUTO_CYCLE_DIRECTION_BACK_AND_FORTH);
-        mCategoriesSlider.setIndicatorSelectedColor(Color.WHITE);
-        mCategoriesSlider.setIndicatorUnselectedColor(Color.GRAY);
-        mCategoriesSlider.setScrollTimeInSec(3);
-        mCategoriesSlider.setAutoCycle(true);
-        mCategoriesSlider.startAutoCycle();
     }
 
     private void initRecyclerView() {
@@ -143,6 +156,12 @@ public class Homepage extends Fragment {
 
         mTrendingAdapter = new TrendingNowHomepageAdapter(getContext(), mViewModel.getModel().getValue().getTrendingProducts());
         mTrendingList.setAdapter(mTrendingAdapter);
+
+        mCategoriesAdapter = new CategoriesHomepageSliderAdapter(getContext(), mViewModel.getModel().getValue().getCategoriesProducts());
+        mCategoriesList.setAdapter(mCategoriesAdapter);
+
+        mGlobalAdapter = new GlobalProductsAdapter(getContext(), mViewModel.getModel().getValue().getGlobalProducts());
+        mGlobalList.setAdapter(mGlobalAdapter);
     }
     public void renewItems(View view) {
         List<SliderModel> sliderItemList = new ArrayList<>();
@@ -162,24 +181,27 @@ public class Homepage extends Fragment {
         mSliderAdapter.renewItems(sliderItemList);
     }
 
-
-    public void renewItemsForCategories(View view) {
+    public void renewItemsForBrandsSlider(View view) {
         List<SliderModel> sliderItemList = new ArrayList<>();
         //dummy data
         for (int i = 0; i < 10; i++) {
             SliderModel sliderItem = new SliderModel();
             if (i % 2 == 0) {
-                sliderItem.setImageUrl("https://www.softwaresuggest.com/blog/wp-content/uploads/2018/10/ecommerce2-1.png");
+                sliderItem.setImageUrl("https://iconshots.com/wp-content/uploads/2018/10/word-image-8.jpeg");
             } else if(i%3==0){
-                sliderItem.setImageUrl("https://cdn.searchenginejournal.com/wp-content/uploads/2018/04/e-commerce-store-760x400.png");
+                sliderItem.setImageUrl("https://www.sportstrategies.com/wp-content/uploads/2018/12/decathlon-logo-2538.png");
+            }
+            else if(i%5==0){
+                sliderItem.setImageUrl("https://1000logos.net/wp-content/uploads/2017/05/Color-oNorth-Face.jpg");
             }
             else{
-                sliderItem.setImageUrl("https://specials-images.forbesimg.com/imageserve/5d95d03767dd830006a295b6/960x0.jpg?fit=scale");
+                sliderItem.setImageUrl("https://www.sportstrategies.com/wp-content/uploads/2018/12/decathlon-logo-2538.png");
             }
             sliderItemList.add(sliderItem);
         }
-        mCategoriesAdapter.renewItems(sliderItemList);
+        mBrandsSliderAdapter.renewItemsForTopBrands(sliderItemList);
     }
+
 
    /* public void removeLastItem(View view) {
         if (mSliderAdapter.getCount() - 1 >= 0)

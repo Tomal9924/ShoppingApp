@@ -27,6 +27,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:padding="12dp"
+                android:alpha=".65"
                 android:src="@drawable/ic_dashboard"
                 android:tint="@android:color/white" />
         </androidx.cardview.widget.CardView>

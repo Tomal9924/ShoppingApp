@@ -2,8 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
-    android:gravity="center"
     android:layout_height="wrap_content">
+
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -12,31 +12,59 @@
         android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="3dp"
-            app:cardMaxElevation="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:elevation="5dp"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="5dp"
             app:cardUseCompatPadding="true">
 
-            <ImageView
-                android:id="@+id/categories_image"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="fitXY"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_dashboard"
-                android:tint="@android:color/white" />
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/categories_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_dashboard" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/categories_image"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:orientation="horizontal"
+                    android:padding="5dp"
+                    android:paddingTop="24dp">
+
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_taka" />
+
+                    <TextView
+                        android:id="@+id/categories_text"
+                        style="@style/TextAppearance.AppCompat.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Titan watch"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+
         </androidx.cardview.widget.CardView>
 
-        <TextView
-            android:id="@+id/categories_text"
-            style="@style/TextAppearance.AppCompat.Subhead"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="Clients"
-            android:textColor="@color/levelColor" />
+
     </LinearLayout>
+
 
 </RelativeLayout>
