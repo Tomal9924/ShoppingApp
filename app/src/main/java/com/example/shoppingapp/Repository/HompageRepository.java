@@ -57,6 +57,18 @@ public class HompageRepository {
                     }
                 }
         );
+        model.setFoodListModel(
+                new ArrayList<SuperModel>() {
+                    {
+                        add(new SuperModel(1,  R.drawable.jacket,"75%","Fleece Jacket",4,10000.00,30));
+                        add(new SuperModel(2,  R.drawable.ice_axe,"60%","Ice Axe",4,500.00,40));
+                        add(new SuperModel(3,  R.drawable.tree_image,"60%","Tree",2,700.00,44));
+                        add(new SuperModel(4,  R.drawable.shoes,"60%","Nike Shoes",1,600.00,15));
+                        add(new SuperModel(5,  R.drawable.shoes,"10%","Adidas Shoes",5,4000.00,10));
+                        add(new SuperModel(6,  R.drawable.watch,"60%","Fast Track Watch",3,300.00,20));
+                    }
+                }
+        );
         model.setGlobalProducts(
                 new ArrayList<SuperModel>() {
                     {

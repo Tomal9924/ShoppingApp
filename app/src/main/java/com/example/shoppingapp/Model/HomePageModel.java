@@ -9,18 +9,21 @@ public class HomePageModel {
     private ArrayList<SuperModel> trendingProducts;
     private ArrayList<SuperModel> categoriesProducts;
     private ArrayList<SuperModel> globalProducts;
+    private ArrayList<SuperModel> foodListModel;
 
     public HomePageModel() {}
 
-    public HomePageModel(ArrayList<SuperModel> superModels, ArrayList<SuperModel> hotOffersModels, ArrayList<SuperModel> trendingProducts, ArrayList<SuperModel> categoriesProducts) {
-        this.superModels = superModels;
-        this.hotOffersModels = hotOffersModels;
-        this.trendingProducts = trendingProducts;
-        this.categoriesProducts = categoriesProducts;
-    }
 
     public ArrayList<SuperModel> getGlobalProducts() {
         return globalProducts;
+    }
+
+    public ArrayList<SuperModel> getFoodListModel() {
+        return foodListModel;
+    }
+
+    public void setFoodListModel(ArrayList<SuperModel> foodListModel) {
+        this.foodListModel = foodListModel;
     }
 
     public void setGlobalProducts(ArrayList<SuperModel> globalProducts) {

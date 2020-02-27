@@ -1,20 +1,28 @@
 package com.example.shoppingapp.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.shoppingapp.Activity.DashboardActivity;
 import com.example.shoppingapp.Model.SuperModel;
 import com.example.shoppingapp.R;
 
 import java.util.ArrayList;
+
+import static com.example.shoppingapp.Utils.Utils.CLASS_NAME_BAGS;
+import static com.example.shoppingapp.Utils.Utils.CLASS_NAME_FOOD;
+import static com.example.shoppingapp.Utils.Utils.CLASS_NAME_TREES;
+import static com.example.shoppingapp.Utils.Utils.FRAGMENT_GOTO_HOMEPAGE;
 
 public class QuickLinkListForHomepageAdapter extends RecyclerView.Adapter<QuickLinkListForHomepageAdapter.ViewHolder> {
 
@@ -60,18 +68,18 @@ public class QuickLinkListForHomepageAdapter extends RecyclerView.Adapter<QuickL
                 break;
         }
 
-      /*  viewHolder.mLayout.setOnClickListener(new View.OnClickListener() {
+        viewHolder.mLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 switch (position) {
                     case 0:
-                        //mContext.startActivity(new Intent(mContext, HomePageActivity.class).putExtra(FRAGMENT_GOTO_HOMEPAGE, CLASS_NAME_PORTFOLIO));
+                        mContext.startActivity(new Intent(mContext, DashboardActivity.class).putExtra(FRAGMENT_GOTO_HOMEPAGE, CLASS_NAME_FOOD));
                         break;
                     case 1:
-
+                        mContext.startActivity(new Intent(mContext, DashboardActivity.class).putExtra(FRAGMENT_GOTO_HOMEPAGE, CLASS_NAME_TREES));
                         break;
                     case 2:
-
+                        mContext.startActivity(new Intent(mContext, DashboardActivity.class).putExtra(FRAGMENT_GOTO_HOMEPAGE, CLASS_NAME_BAGS));
                         break;
                     case 3:
 
@@ -81,7 +89,7 @@ public class QuickLinkListForHomepageAdapter extends RecyclerView.Adapter<QuickL
                         break;
                 }
             }
-        });*/
+        });
     }
 
         @Override
@@ -90,14 +98,15 @@ public class QuickLinkListForHomepageAdapter extends RecyclerView.Adapter<QuickL
         }
 
         public class ViewHolder extends RecyclerView.ViewHolder {
-            RelativeLayout mLayout;
             ImageView mLogo;
             TextView mCaption;
+            LinearLayout mLayout;
 
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
                 mCaption = itemView.findViewById(R.id.row_layout_quick_link_caption);
                 mLogo = itemView.findViewById(R.id.row_layout_quick_link_logo);
+                mLayout = itemView.findViewById(R.id.row_layout_quick_link);
             }
         }
     }

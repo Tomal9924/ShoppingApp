@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/searchBackground"
+    android:background="@color/background_color"
     android:orientation="vertical"
     android:padding="8dp"
     tools:context=".Fragment.Homepage">
@@ -105,7 +105,7 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        app:cardBackgroundColor="@color/searchBackground">
+                        app:cardBackgroundColor="@color/background_color">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -141,12 +141,14 @@
                         android:src="@drawable/ic_offer"/>
 
                     <TextView
-                        style="@style/TextAppearance.AppCompat.Title.Inverse"
+                        style="@style/TextAppearance.AppCompat.Small"
                         android:layout_width="0dp"
                         android:layout_weight="6.2"
+                        android:textStyle="bold"
                         android:layout_height="wrap_content"
                         android:text="Offers"
                         android:paddingLeft="4dp"
+                        android:layout_gravity="center_vertical"
                         android:textColor="@color/levelColor" />
 
                     <TextView
@@ -172,7 +174,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:elevation="2dp"
-                        app:cardBackgroundColor="@color/searchBackground">
+                        app:cardBackgroundColor="@color/background_color">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -203,12 +205,14 @@
                         android:src="@drawable/ic_top_brands"/>
 
                     <TextView
-                        style="@style/TextAppearance.AppCompat.Title.Inverse"
+                        style="@style/TextAppearance.AppCompat.Small"
                         android:layout_width="0dp"
                         android:layout_weight="6.2"
                         android:layout_height="wrap_content"
                         android:text="Featured Brands"
                         android:paddingLeft="4dp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_vertical"
                         android:textColor="@color/levelColor" />
 
                     <TextView
@@ -274,12 +278,14 @@
                         android:src="@drawable/ic_checklist"/>
 
                     <TextView
-                        style="@style/TextAppearance.AppCompat.Title.Inverse"
+                        style="@style/TextAppearance.AppCompat.Small"
                         android:layout_width="0dp"
                         android:layout_weight="6.2"
                         android:layout_height="wrap_content"
                         android:text="Categories"
                         android:paddingLeft="4dp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_vertical"
                         android:textColor="@color/levelColor" />
 
                     <TextView
@@ -309,7 +315,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:elevation="2dp"
-                        app:cardBackgroundColor="@color/searchBackground">
+                        app:cardBackgroundColor="@color/background_color">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -339,12 +345,14 @@
                         android:src="@drawable/ic_popular"/>
 
                     <TextView
-                        style="@style/TextAppearance.AppCompat.Title.Inverse"
+                        style="@style/TextAppearance.AppCompat.Small"
                         android:layout_width="0dp"
+                        android:textStyle="bold"
                         android:layout_weight="6.2"
                         android:layout_height="wrap_content"
                         android:text="Trending Now"
                         android:paddingLeft="4dp"
+                        android:layout_gravity="center_vertical"
                         android:textColor="@color/levelColor" />
 
                     <TextView
@@ -370,7 +378,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:elevation="2dp"
-                        app:cardBackgroundColor="@color/searchBackground">
+                        app:cardBackgroundColor="@color/background_color">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -401,12 +409,14 @@
                         android:src="@drawable/ic_cart"/>
 
                     <TextView
-                        style="@style/TextAppearance.AppCompat.Title.Inverse"
+                        style="@style/TextAppearance.AppCompat.Small"
                         android:layout_width="0dp"
                         android:layout_weight="6.2"
                         android:layout_height="wrap_content"
                         android:text="Global Products"
                         android:paddingLeft="4dp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_vertical"
                         android:textColor="@color/levelColor"
                         android:paddingStart="4dp" />
 
@@ -427,7 +437,7 @@
                <androidx.recyclerview.widget.RecyclerView
                    android:id="@+id/global_product_list"
                    android:layout_width="match_parent"
-                   android:background="@color/searchBackground"
+                   android:background="@color/background_color"
                    android:layout_height="wrap_content"/>
                 <EditText
                     android:layout_width="wrap_content"
