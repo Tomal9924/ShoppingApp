@@ -1,26 +1,39 @@
 <resources>
 
-    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+    <style name="AppTheme" parent="Theme.Design.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
+
     <style name="BottomNavigationTheme" parent="Theme.AppCompat.Light">
-        <item name="colorPrimary">@android:color/white</item>
-        <item name="android:textColorSecondary">@color/colorOffWhite</item>
+        <item name="colorPrimary">@color/colorAccent</item>
+
+        <item name="android:textColorSecondary">@color/dividerColor</item>
     </style>
 
+    <style name="TextAppearance.App.TextInputLayout" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+    <style name="AppTheme.Launcher">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
     <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
         <!-- Gets rid of the search icon -->
         <item name="searchIcon">@drawable/ic_search</item>
         <!-- Gets rid of the "underline" in the text -->
-        <item name="queryBackground">@color/background_color</item>
+        <item name="queryBackground">@color/white</item>
         <!-- Gets rid of the search icon when the SearchView is expanded -->
         <item name="closeIcon">@drawable/ic_close</item>
     </style>
-    <style name="RatingBar"
-        parent="android:style/Widget.Material.RatingBar.Small">
+
+    <style name="RatingBar" parent="android:style/Widget.Material.RatingBar.Small">
         <item name="colorControlNormal">@color/cardview_dark_background</item>
         <item name="colorControlActivated">@color/colorAccent</item>
     </style>

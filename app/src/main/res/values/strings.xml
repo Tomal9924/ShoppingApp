@@ -1,6 +1,18 @@
 <resources>
-    <string name="app_name">ShoppingApp</string>
+    <string name="app_name">Bongo Baazar</string>
 
     <!-- TODO: Remove or change this placeholder text -->
+    <string name="facebook_app_id">214111413126320</string>
+    <string name="fb_login_protocol_scheme">fb214111413126320</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="product_descriptions">A product description is the marketing copy that explains what a product is and why it is worth purchasing.The purpose of a product description is to supply customers with important information about the features and benefits of the product so they are compelled to buy.</string>
+    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="highlights">Dimensions: 153.5 x 71.9 x 8.5 mm (6.04 x 2.83 x 0.33 in)
+Weight	173.8 g (6.14 oz).\n
+Build:Glass front (Gorilla Glass 5), glass back (Gorilla Glass 5), plastic frame\n
+SIM	Hybrid Dual SIM (Nano-SIM, dual stand-by)\n
+DISPLAY	Type:Super AMOLED capacitive touchscreen, 16M colors\n
+Size:6.09 inches, 91.0 cm2 (~82.5% screen-to-body ratio)\n
+Resolution:720 x 1560 pixels, 19.5:9 ratio (~282 ppi density)\n
+Protection:Corning Gorilla Glass 5</string>
 </resources>

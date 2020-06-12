@@ -28,34 +28,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_alignParentTop="true"
-                    android:scaleType="fitCenter"
+                    android:scaleType="centerCrop"
+                    android:alpha=".7"
                     android:src="@drawable/ic_dashboard" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignBottom="@+id/categories_image"
                     android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:orientation="horizontal"
-                    android:padding="5dp"
-                    android:paddingTop="24dp">
-
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:src="@drawable/ic_taka" />
-
+                    android:background="#9A434241"
+                    android:gravity="center">
                     <TextView
                         android:id="@+id/categories_text"
                         style="@style/TextAppearance.AppCompat.Small"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
                         android:text="Titan watch"
-                        android:textColor="@android:color/black" />
-                </LinearLayout>
+                        android:padding="8dp"
+                        android:textColor="@android:color/white" />
+                </RelativeLayout>
+
 
 
             </RelativeLayout>

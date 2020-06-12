@@ -1,12 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimary">#FF9800</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#ffffbb33</color>
-    <color name="quickMenuCardColor">#FFAB00</color>
+   <!-- <color name="colorAccent">#ffffbb33</color>-->
+    <color name="colorAccent">#f44336</color>
+   <!-- <color name="item_background">#F8D183</color>-->
+    <color name="item_background">#33EAAF00</color>
+   <!-- <color name="quickMenuCardColor">#FFAB00</color>-->
+    <color name="quickMenuCardColor">#DD4E43</color>
     <color name="colorOffWhite">#59FFFFFF</color>
     <color name="levelColor">#454545</color>
-    <color name="dividerColor">#887F7F</color>
-    <color name="navBarColor">#FFF</color>
-    <color name="background_color">#F0F0F0</color>
+    <color name="textColor">#484848</color>
+    <color name="dividerColor">#4D887F7F</color>
+    <color name="div">#C5BFBF</color>
+    <color name="white">#FFF</color>
+    <color name="blue">#004080</color>
+    <color name="arcColor">#F4D2A0</color>
+    <color name="card_color">#FDFAF6</color>
+   <!-- <color name="flashDealCardColor">#FAE8BE</color>-->
+    <color name="flashDealCardColor">#F8EBEA</color>
+    <color name="add_to_cart_button_color">#CC5148</color>
+    <color name="background_color">#F6F7FB</color>
+    <color name="opacity_green">#33008577</color>
+    <color name="opacity_green_light">#00008577</color>
+    <!--100% — FF
+    95% — F2
+    90% — E6
+    85% — D9
+    80% — CC
+    75% — BF
+    70% — B3
+    65% — A6
+    60% — 99
+    55% — 8C
+    50% — 80
+    45% — 73
+    40% — 66
+    35% — 59
+    30% — 4D
+    25% — 40
+    20% — 33
+    15% — 26
+    10% — 1A
+    5% — 0D
+    0% — 00-->
 </resources>

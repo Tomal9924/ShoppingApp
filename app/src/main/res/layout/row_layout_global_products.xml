@@ -2,10 +2,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
+    android:id="@+id/main_layout"
     android:layout_height="wrap_content">
 
 
     <LinearLayout
+        android:id="@+id/layout"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
@@ -13,22 +15,22 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:elevation="5dp"
+            android:layout_height="wrap_content"
+            app:cardElevation="7dp"
             app:cardBackgroundColor="@android:color/white"
-            app:cardCornerRadius="5dp"
+            app:cardCornerRadius="12dp"
             app:cardUseCompatPadding="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:background="@drawable/layout_corner_transparent_color"
                 android:weightSum="10">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="5">
+                    android:layout_height="wrap_content">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -37,17 +39,29 @@
                         <ImageView
                             android:id="@+id/global_image"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:scaleType="fitCenter"
+                            android:layout_height="wrap_content"
+                            android:scaleType="fitXY"
+                            android:adjustViewBounds="true"
                             android:src="@drawable/ic_dashboard" />
+                        <ImageView
+                            android:id="@+id/favourite_list"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:padding="8dp"
+                            android:layout_margin="4dp"
+                            android:scaleType="center"
+                            android:background="@drawable/background_back_button"
+                            android:layout_alignParentTop="true"
+                            android:src="@drawable/ic_heart_outline"
+                            android:tint="#F6DE07"
+                            android:layout_alignParentRight="true"/>
 
                     </RelativeLayout>
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="5">
+                    android:layout_height="wrap_content">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -63,7 +77,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@android:color/white"
+                            android:background="@color/white"
                             android:gravity="start"
                             android:padding="4dp"
                             android:orientation="vertical">
@@ -74,64 +88,20 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Titan watch"
-                                android:textColor="@android:color/black" />
-
-                            <RelativeLayout
+                                android:paddingLeft="8dp"
+                                android:maxLines="2"
+                                android:ellipsize="end"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:id="@+id/product_sold_count"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:paddingTop="8dp">
-
-                                <RatingBar
-                                    android:id="@+id/product_ratting"
-                                    style="@style/RatingBar"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignParentLeft="true"
-                                    android:isIndicator="true"
-                                    android:max="5"
-                                    android:rating="4"
-                                    android:layout_alignParentStart="true" />
-
-                                <TextView
-                                    android:id="@+id/product_review_count"
-                                    style="@style/TextAppearance.AppCompat.Small"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignParentRight="true"
-                                    android:gravity="center_horizontal"
-                                    android:text="(23)"
-                                    android:textColor="@android:color/darker_gray" />
-                            </RelativeLayout>
-
-                            <RelativeLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="-2dp"
-                                android:orientation="horizontal">
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    android:gravity="center_horizontal"
-                                    android:layout_gravity="center">
-                                    <ImageView
-                                        android:layout_width="24dp"
-                                        android:layout_height="24dp"
-                                        android:src="@drawable/ic_taka"/>
-                                    <TextView
-                                        android:id="@+id/global_price"
-                                        style="@style/TextAppearance.AppCompat.Small"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="100 Rs"
-                                        android:paddingTop="4dp"
-                                        android:textColor="@android:color/black" />
-
-                                </LinearLayout>
-
-                            </RelativeLayout>
+                                android:text="23 sold"
+                                android:textColor="@color/div"
+                                android:textSize="10dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginBottom="8dp"
+                                style="@style/TextAppearance.AppCompat.Small" />
                         </LinearLayout>
                     </LinearLayout>
 

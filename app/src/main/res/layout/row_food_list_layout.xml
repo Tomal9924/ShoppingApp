@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/food_layout"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
 
     <LinearLayout
-        android:layout_width="200dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:elevation="5dp"
+            android:layout_height="wrap_content"
+            android:elevation="8dp"
             app:cardBackgroundColor="@android:color/white"
             app:cardCornerRadius="5dp"
             app:cardUseCompatPadding="true">
@@ -23,12 +24,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
+                android:padding="8dp"
                 android:weightSum="10">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="7">
+                    android:layout_height="wrap_content">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -37,8 +38,9 @@
                         <ImageView
                             android:id="@+id/food_list_image"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:scaleType="fitCenter"
+                            android:layout_height="wrap_content"
+                            android:scaleType="fitXY"
+                            android:adjustViewBounds="true"
                             android:src="@drawable/ic_dashboard" />
 
                         <TextView
@@ -59,8 +61,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="3">
+                    android:layout_height="wrap_content">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -87,8 +88,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Titan watch"
-                                android:textStyle="bold"
-                                android:textColor="@android:color/black" />
+                                android:maxLines="1"
+                                android:ellipsize="end"
+                                android:textColor="@android:color/black"
+                                android:textStyle="bold" />
 
                             <RatingBar
                                 android:id="@+id/product_ratting"
@@ -115,10 +118,12 @@
                                     android:layout_alignParentStart="true"
                                     android:layout_alignParentLeft="true"
                                     android:layout_gravity="center">
+
                                     <ImageView
-                                        android:layout_width="24dp"
-                                        android:layout_height="24dp"
-                                        android:src="@drawable/ic_taka"/>
+                                        android:layout_width="18dp"
+                                        android:layout_height="18dp"
+                                        android:src="@drawable/ic_taka" />
+
                                     <TextView
                                         android:id="@+id/product_new_price"
                                         style="@style/TextAppearance.AppCompat.Small"
